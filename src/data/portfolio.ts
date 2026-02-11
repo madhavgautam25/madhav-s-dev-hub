@@ -17,23 +17,42 @@ export const aboutText = [
 export const skills = [
   {
     category: "Frontend",
-    items: ["React", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
+    items: [
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express"],
+    items: [
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    ],
   },
   {
     category: "Database",
-    items: ["MongoDB"],
+    items: [
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    ],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "REST APIs", "VS Code"],
+    items: [
+      { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "REST APIs", icon: "" },
+      { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    ],
   },
   {
     category: "AI Basics",
-    items: ["ML APIs", "AI Integration"],
+    items: [
+      { name: "ML APIs", icon: "" },
+      { name: "AI Integration", icon: "" },
+    ],
   },
 ];
 
