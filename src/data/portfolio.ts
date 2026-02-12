@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Madhav Gautam",
   headline: "Full Stack Developer & AI Enthusiast",
   tagline: "B.Tech CSE student passionate about building scalable products, student-focused platforms, and AI-powered applications.",
-  email: "madhav@example.com",
+  email: "gautam.madhav63@gmail.com",
   linkedin: "https://linkedin.com/in/madhavgautam",
   github: "https://github.com/madhavgautam",
   resumeUrl: "#",
