@@ -43,7 +43,7 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
           >
             Hi, I'm{' '}
-            <span className="gradient-orange-text relative">
+            <span className="gradient-orange-text relative whitespace-nowrap">
               {personalInfo.name}
               <motion.span
                 className="absolute -bottom-2 left-0 right-0 h-1 rounded-full gradient-orange"
