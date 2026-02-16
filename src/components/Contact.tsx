@@ -1,22 +1,35 @@
 import { useState } from 'react';
-import { Send, Mail, Linkedin, Github } from 'lucide-react';
+import { Send, Mail, Linkedin, Github, Loader2 } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import SectionHeading from './SectionHeading';
+import { supabase } from '@/integrations/supabase/client';
 
 export default function Contact() {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({ title: 'Please fill in all fields', variant: 'destructive' });
       return;
     }
-    toast({ title: 'Message sent!', description: "Thanks for reaching out. I'll get back to you soon." });
-    setForm({ name: '', email: '', message: '' });
+    setSending(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: { name: form.name, email: form.email, message: form.message },
+      });
+      if (error) throw error;
+      toast({ title: 'Message sent!', description: "Thanks for reaching out. I'll get back to you soon." });
+      setForm({ name: '', email: '', message: '' });
+    } catch (err: any) {
+      toast({ title: 'Failed to send message', description: err.message || 'Please try again later.', variant: 'destructive' });
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClasses = "w-full px-4 py-3 rounded-xl bg-background border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 hover:border-primary/30";
@@ -62,11 +75,12 @@ export default function Contact() {
             />
             <motion.button
               type="submit"
+              disabled={sending}
               whileHover={{ scale: 1.05, boxShadow: '0 0 40px hsl(25 95% 53% / 0.4)' }}
               whileTap={{ scale: 0.97 }}
-              className="gradient-orange-btn text-white px-8 py-3 rounded-xl font-semibold inline-flex items-center gap-2 transition-all orange-glow"
+              className="gradient-orange-btn text-white px-8 py-3 rounded-xl font-semibold inline-flex items-center gap-2 transition-all orange-glow disabled:opacity-50"
             >
-              Send Message <Send size={16} />
+              {sending ? <><Loader2 size={16} className="animate-spin" /> Sending...</> : <>Send Message <Send size={16} /></>}
             </motion.button>
           </motion.form>
 
