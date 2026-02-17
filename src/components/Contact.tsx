@@ -32,14 +32,14 @@ export default function Contact() {
     }
   };
 
-  const inputClasses = "w-full px-4 py-3 rounded-xl bg-background border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 hover:border-primary/30";
+  const inputClasses = "w-full px-4 py-3 rounded-lg bg-card/50 border border-border text-sm font-mono focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/30 transition-all duration-300 placeholder:text-muted-foreground/50";
 
   return (
-    <section id="contact" className="py-24 px-6 bg-muted/30 relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
-        <SectionHeading title="Get In Touch" />
+        <SectionHeading title="Contact" />
         <div className="grid md:grid-cols-5 gap-10">
           <motion.form
             initial={{ y: 40, opacity: 0 }}
@@ -52,7 +52,7 @@ export default function Contact() {
             <motion.input
               whileFocus={{ scale: 1.01 }}
               type="text"
-              placeholder="Your Name"
+              placeholder="// your name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               className={inputClasses}
@@ -60,14 +60,14 @@ export default function Contact() {
             <motion.input
               whileFocus={{ scale: 1.01 }}
               type="email"
-              placeholder="Your Email"
+              placeholder="// your email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className={inputClasses}
             />
             <motion.textarea
               whileFocus={{ scale: 1.01 }}
-              placeholder="Your Message"
+              placeholder="// your message"
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -76,11 +76,11 @@ export default function Contact() {
             <motion.button
               type="submit"
               disabled={sending}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 40px hsl(25 95% 53% / 0.4)' }}
+              whileHover={{ scale: 1.03, boxShadow: '0 0 30px hsl(190 100% 50% / 0.3)' }}
               whileTap={{ scale: 0.97 }}
-              className="gradient-orange-btn text-white px-8 py-3 rounded-xl font-semibold inline-flex items-center gap-2 transition-all orange-glow disabled:opacity-50"
+              className="gradient-cyber-btn text-primary-foreground px-8 py-3 rounded-lg font-semibold font-mono inline-flex items-center gap-2 transition-all cyber-glow disabled:opacity-50"
             >
-              {sending ? <><Loader2 size={16} className="animate-spin" /> Sending...</> : <>Send Message <Send size={16} /></>}
+              {sending ? <><Loader2 size={16} className="animate-spin" /> sending...</> : <>send() <Send size={16} /></>}
             </motion.button>
           </motion.form>
 
@@ -92,7 +92,7 @@ export default function Contact() {
             className="md:col-span-2 space-y-6"
           >
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Feel free to reach out for collaborations, project ideas, or just a friendly chat!
+              Open for collaborations, project ideas, or just a friendly chat about tech.
             </p>
             <div className="space-y-3">
               {[
@@ -106,9 +106,9 @@ export default function Contact() {
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   whileHover={{ x: 4 }}
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Icon size={18} /> {label}
+                  <Icon size={16} /> {label}
                 </motion.a>
               ))}
             </div>

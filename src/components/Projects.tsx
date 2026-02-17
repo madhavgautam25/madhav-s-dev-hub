@@ -10,11 +10,9 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { y: 50, opacity: 0, rotateX: 5 },
+  hidden: { y: 50, opacity: 0 },
   visible: {
-    y: 0,
-    opacity: 1,
-    rotateX: 0,
+    y: 0, opacity: 1,
     transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
 };
@@ -22,14 +20,6 @@ const cardVariants = {
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 relative">
-      {/* Grid pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02]"
-        style={{
-          backgroundImage: 'linear-gradient(hsl(25 95% 53% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(25 95% 53% / 0.5) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-        }}
-      />
-
       <div className="max-w-5xl mx-auto relative">
         <SectionHeading title="Projects" />
 
@@ -43,8 +33,8 @@ export default function Projects() {
           <Terminal size={14} className="text-primary" />
           <span>~/madhav/projects</span>
           <span className="text-primary">$</span>
-          <span>ls -la</span>
-          <span className="animate-pulse text-primary">▌</span>
+          <span>ls --detailed</span>
+          <span className="animate-typing-cursor text-primary">▌</span>
         </motion.div>
 
         <motion.div
@@ -58,23 +48,20 @@ export default function Projects() {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              whileHover={{ y: -8, scale: 1.01 }}
-              className="glass rounded-2xl p-6 border border-border hover:border-primary/40 transition-all duration-300 orange-glow-hover group relative overflow-hidden"
+              whileHover={{ y: -6 }}
+              className="rounded-lg p-6 border border-border bg-card/50 hover:border-primary/30 transition-all duration-300 cyber-glow-hover group relative overflow-hidden"
             >
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
-              {/* Corner decoration */}
-              <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                <div className="absolute top-0 right-0 w-[1px] h-8 bg-gradient-to-b from-primary/40 to-transparent" />
-                <div className="absolute top-0 right-0 h-[1px] w-8 bg-gradient-to-l from-primary/40 to-transparent" />
-              </div>
+              {/* Corner brackets */}
+              <div className="absolute top-0 left-0 w-5 h-5 border-t border-l border-primary/20" />
+              <div className="absolute top-0 right-0 w-5 h-5 border-t border-r border-primary/20" />
+              <div className="absolute bottom-0 left-0 w-5 h-5 border-b border-l border-primary/20" />
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-accent/20" />
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-1">
                   <div className="flex items-center gap-2">
                     <span className="text-primary font-mono text-xs">&gt;_</span>
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold font-mono group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                   </div>
@@ -89,7 +76,6 @@ export default function Projects() {
                   </Link>
                 </div>
 
-                {/* Status */}
                 <div className="mb-3">
                   <span className={`text-[10px] font-mono uppercase tracking-wider ${
                     project.status === 'Completed' ? 'text-accent' : 'text-primary'
@@ -103,7 +89,7 @@ export default function Projects() {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-5">
                   {project.tech.map((t) => (
-                    <span key={t} className="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-primary/10 text-primary border border-primary/20">
+                    <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-primary/10 text-primary border border-primary/20">
                       {t}
                     </span>
                   ))}
@@ -115,10 +101,10 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ x: 2 }}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-muted-foreground hover:text-primary transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <Github size={16} /> GitHub
+                      <Github size={14} /> src
                     </motion.a>
                     {project.demo !== '#' && (
                       <motion.a
@@ -126,18 +112,18 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ x: 2 }}
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                        className="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-muted-foreground hover:text-primary transition-colors"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <ExternalLink size={16} /> Live Demo
+                        <ExternalLink size={14} /> demo
                       </motion.a>
                     )}
                   </div>
                   <Link
                     to={`/project/${project.slug}`}
-                    className="text-xs font-mono text-primary hover:underline"
+                    className="text-xs font-mono text-primary hover:text-accent transition-colors"
                   >
-                    View Details →
+                    cat README.md →
                   </Link>
                 </div>
               </div>
