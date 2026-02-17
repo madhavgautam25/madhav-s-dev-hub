@@ -1,17 +1,18 @@
 export const personalInfo = {
   name: "Madhav Gautam",
-  headline: "Full Stack Developer & AI Enthusiast",
-  tagline: "B.Tech CSE student passionate about building scalable products, student-focused platforms, and AI-powered applications.",
+  headline: "Full-Stack Developer and AI-Driven Product Builder",
+  tagline: "B.Tech CSE student focused on building scalable web applications, intelligent systems, and impactful digital products that solve real-world student and business problems.",
   email: "gautam.madhav63@gmail.com",
-  linkedin: "https://linkedin.com/in/madhavgautam",
-  github: "https://github.com/madhavgautam",
-  resumeUrl: "#",
+  linkedin: "https://linkedin.com/in/madhav-gautam06",
+  github: "https://github.com/madhavgautam25",
+  resumeUrl: "src\assets\RESUME.pdf",
 };
 
 export const aboutText = [
   "I'm a 2nd-year B.Tech Computer Science Engineering student at Chitkara University, driven by curiosity and a love for building things that matter.",
-  "My journey revolves around Full Stack Web Development (MERN stack), AI integration, and solving real-world problems through code. I believe in learning by doing — every project I pick up teaches me something new.",
-  "When I'm not coding, I'm exploring new AI APIs, brainstorming startup ideas, or contributing to hackathons. I'm always looking for opportunities to collaborate and create impact.",
+  "I specialize in full-stack web development using React, Node.js, and MongoDB, and enjoy working on IoT and AI-based projects that create practical impact.",
+  "From smart agriculture systems to student-focused platforms, I love transforming ideas into functional products. Constantly learning, experimenting, and improving — I aim to grow as a software developer while solving meaningful problems with technology."
+
 ];
 
 export const skills = [
@@ -98,11 +99,11 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-soil-health-monitor",
-    title: "Smart Soil Health Monitor",
-    description: "IoT-based soil monitoring system using ESP32 sensors and solar power to provide real-time soil health data to farmers.",
-    longDescription: "A smart agriculture solution that leverages IoT technology to monitor soil conditions in real-time. The system uses ESP32 microcontrollers with various sensors to measure soil moisture, pH, temperature, and nutrient levels, transmitting data to a web dashboard for farmers to make informed decisions.",
-    tech: ["ESP32", "IoT", "React", "Node.js", "MQTT", "Chart.js"],
-    github: "https://github.com/madhavgautam/soil-monitor",
+    title: "Smart Soil Health Monitor with NPK Sensing and Solar Powered System",
+    description: "A solar-powered IoT-based system that monitors soil nutrients (NPK), pH, moisture, and temperature in real time to help farmers optimize irrigation and fertilizer usage.",
+    longDescription: "Smart Soil Health Monitor is an IoT-enabled, solar-powered agriculture solution designed to provide real-time insights into soil health. The system measures key parameters including NPK nutrients, pH level, soil moisture, and temperature using integrated sensors connected to an ESP32 microcontroller.",
+    tech: ["ESP32", "Thingspeak - IOT platform", "NPK Sensor", "4-in-1 Soil pH Sensor Module"],
+    github: "https://github.com/madhavgautam25/smart-soil-health-monitor-with-NPK-sensing-and-solar-powered-system",
     demo: "#",
     features: [
       "Real-time soil moisture, pH, and temperature monitoring",
@@ -172,31 +173,41 @@ export const projects: Project[] = [
 
 export const experiences = [
   {
-    title: "Hackathon Participant",
-    org: "Multiple Events",
-    period: "2024 — Present",
-    description: "Participated in college and inter-college hackathons, building MVPs under time pressure and collaborating with cross-functional teams.",
+    title: "Software Development Projects",
+    org: "Personal & Academic Work",
+    period: "2024 – Present",
+    description: "Built multiple full-stack and frontend projects using React, Tailwind CSS, Node.js, Express, and MongoDB. Designed responsive user interfaces, implemented REST APIs, and worked on real-world problem statements including smart systems and student-focused platforms. Hands-on experience with Git/GitHub, debugging, and performance optimization."
+  },
+
+  {
+    title: "Academic & Technical Experience",
+    org: "B.Tech CSE – Chitkara University",
+    period: "2023 – Present",
+    description: "Strong foundation in Data Structures, OOP, Operating Systems, and Web Development. Participated in technical events and hackathons, built IoT-integrated projects using ESP32 and sensors, and converted ideas into working prototypes."
   },
   {
-    title: "Academic / Capstone Projects",
-    org: "Chitkara University",
-    period: "2023 — Present",
-    description: "Developed multiple academic projects applying full-stack development and AI integration skills to solve real-world problems.",
+    title: "Self Learning & Skill Development",
+    org: "Independent Learning",
+    period: "2024 – Present",
+    description: "Continuously learning modern technologies through documentation, hands-on projects, and experimentation. Exploring AI tools and building intelligent systems like an AI Career Advisor while improving problem-solving skills through coding practice and mini projects."
   },
-  {
-    title: "Digital Content Incharge",
-    org: "School Leadership Role",
-    period: "2021 — 2023",
-    description: "Led the digital content team, managed social media presence, and created engaging content for school events and campaigns.",
-  },
+
 ];
 
-export const education = {
-  degree: "B.Tech — Computer Science Engineering",
-  institution: "Chitkara University",
-  period: "2023 — 2027",
-  description: "Pursuing a Bachelor's in CSE with focus on software development, AI/ML fundamentals, and hands-on project-based learning.",
-};
+export const education = [
+  {
+    degree: "B.E. — Computer Science Engineering",
+    institution: "Chitkara University, Punjab",
+    period: "2024 — 2028",
+    description: "Pursuing a Bachelor's in CSE with focus on software development, AI/ML fundamentals, and hands-on project-based learning.",
+  },
+  {
+    degree: "CBSE — 10+2",
+    institution : "Guru Nanak Foundation Public School, Patiala",
+    period: "2023 — 2024",
+    description: "Completed Class 12th with a focus on Science (PCM), building a strong foundation in mathematics, logical thinking, and problem-solving. Developed early interest in computer science and technology, which shaped my journey toward engineering.",
+  }
+];
 
 export const navLinks = [
   { label: "About", href: "#about" },
