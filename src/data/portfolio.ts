@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Madhav Gautam",
   headline: "Full-Stack Developer and AI-Driven Product Builder",
-  tagline: "B.Tech CSE student focused on building scalable web applications, intelligent systems, and impactful digital products that solve real-world student and business problems.",
+  tagline: "B.E. CSE student focused on building scalable web applications, intelligent systems, and impactful digital products that solve real-world student and business problems.",
   email: "gautam.madhav63@gmail.com",
   linkedin: "https://linkedin.com/in/madhav-gautam06",
   github: "https://github.com/madhavgautam25",
@@ -9,7 +9,7 @@ export const personalInfo = {
 };
 
 export const aboutText = [
-  "I'm a 2nd-year B.Tech Computer Science Engineering student at Chitkara University, driven by curiosity and a love for building things that matter.",
+  "I'm a 2nd-year B.E. Computer Science Engineering student at Chitkara University, driven by curiosity and a love for building things that matter.",
   "I specialize in full-stack web development using React, Node.js, and MongoDB, and enjoy working on IoT and AI-based projects that create practical impact.",
   "From smart agriculture systems to student-focused platforms, I love transforming ideas into functional products. Constantly learning, experimenting, and improving — I aim to grow as a software developer while solving meaningful problems with technology."
 
@@ -181,8 +181,8 @@ export const experiences = [
 
   {
     title: "Academic & Technical Experience",
-    org: "B.Tech CSE – Chitkara University",
-    period: "2023 – Present",
+    org: "B.E. CSE – Chitkara University",
+    period: "2024 – Present",
     description: "Strong foundation in Data Structures, OOP, Operating Systems, and Web Development. Participated in technical events and hackathons, built IoT-integrated projects using ESP32 and sensors, and converted ideas into working prototypes."
   },
   {
