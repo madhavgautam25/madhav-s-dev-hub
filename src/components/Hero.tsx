@@ -17,7 +17,7 @@ const textReveal = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-20 md:pt-0">
       {/* Animated rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.div
